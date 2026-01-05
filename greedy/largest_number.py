@@ -23,11 +23,11 @@ Each number is between 1 and 10,000, inclusive.
 Output
 Return a single integer: the maximum sum that can be obtained by following the Law of the Largest Number.
 """
+from timer import timer
 
 
-def law_of_the_largest_number() -> int:
-    n, m, k = map(int, input("Enter three integers separated by spaces.\n").split())
-    array_data = list(map(int, input("Enter n-number of integers separated by spaces.\n").split()))
+@timer
+def law_of_the_largest_number(n, m, k, array_data) -> int:
     sorted_array = sorted(array_data, reverse=True)
 
     repeat = m // (k + 1)
@@ -38,9 +38,8 @@ def law_of_the_largest_number() -> int:
     return result
 
 
-def law_of_the_largest_number_using_iteration() -> int:
-    n, m, k = map(int, input("Enter three integers separated by spaces.\n").split())
-    array_data = list(map(int, input("Enter n-number of integers separated by spaces.\n").split()))
+@timer
+def law_of_the_largest_number_using_iteration(n, m, k, array_data) -> int:
     sorted_array = sorted(array_data, reverse=True)
 
     result = 0
@@ -61,7 +60,14 @@ def law_of_the_largest_number_using_iteration() -> int:
 
 
 def main():
-    print(law_of_the_largest_number())
+    """
+    Drive the program.
+    """
+    n, m, k = map(int, input("Enter three integers separated by spaces.\n").split())
+    array_data = list(map(int, input("Enter n-number of integers separated by spaces.\n").split()))
+
+    print(law_of_the_largest_number_using_iteration(n, m, k, array_data))
+    print(law_of_the_largest_number(n, m, k, array_data))
 
 
 if __name__ == "__main__":
