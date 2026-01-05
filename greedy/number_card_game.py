@@ -45,6 +45,7 @@ def number_card_game_using_if_statement(card_grid: list) -> int:
 
     return result
 
+
 def main():
     """
     Drive the program.

@@ -67,7 +67,7 @@ def operations_copying_recursive_with_iteration(n: int, k: int) -> int:
 
 
 @timer
-def operations_using_recursive(n: int, k: int, counter: int=0) -> int:
+def operations_using_recursive(n: int, k: int, counter: int = 0) -> int:
     if n == 1:
         return counter
 
